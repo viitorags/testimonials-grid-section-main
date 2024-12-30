@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	/* Colors */
+	--moderate-violet: hsl(263, 55%, 52%);
+	--very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--very-dark-blackish-blue: hsl(219, 29%, 14%);
+	--white: hsl(0, 0%, 100%);
+
+	/* Neutral Colors */
+	--light-gray: hsl(0, 0%, 81%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
+
+	/* Text Colors with Opacity */
+	--verified-graduate-text: hsla(0, 0%, 100%, 0.5);
+	--review-text: hsla(0, 0%, 100%, 0.7);
+
+	/* Typography */
+	--base-font-size: 13px;
+	--font-family: "Barlow Semi Condensed", sans-serif;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--font-family);
+	font-size: var(--base-font-size);
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+}
+
+main {
+    height: 100vh;
+}
+
+.card-area {
+    display: grid;
+	align-items: center;
+	justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 100px;
+	margin: 0;
+}
+
+.card {
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.card-1 {
+    background-color: var(--moderate-violet);
+    background-image: url("./images/bg-pattern-quotation.svg");
+	background-repeat: no-repeat;
+	background-position: top right 40px;
+	grid-column: 1 / 3;
+}
+
+.card-1 > .card-info img {
+	border: var(--verified-graduate-text) 2px solid;
+}
+
+.card-2 {
+    background-color: var(--very-dark-grayish-blue);
+    grid-column: 3;
+}
+
+.card-3 {
+    background-color: var(--white);
+	height: 100%;
+    grid-column: 1;
+}
+
+.card-4 {
+    background-color: var(--very-dark-blackish-blue);
+    grid-column: 2 / 4;
+}
+
+.card-4 > .card-info img {
+	border: var(--moderate-violet) 2px solid;
+}
+
+.card-5 {
+    background-color: var(--white);
+	height: 100%;
+    grid-column: 4;
+    grid-row: 1 / 3;
+}
+
+.card-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.card-info h3 {
+	color: var(--white);
+	font-weight: var(--font-weight-semibold);
+}
+
+.card-info > .info-text {
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+}
+
+.card-text,.card-info p {
+	color: var(--light-gray);
+	font-weight: var(--font-weight-medium);
+}
+
+.profile-img {
+	width: 40px;
+	border-radius: 50%;
+}
+
+.card-text h2 {
+	color: var(--white);
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.card:nth-child(3) .card-info h3 {
+	color: var(--very-dark-grayish-blue);
+}
+
+.card:nth-child(5) .card-info h3 {
+	color: var(--very-dark-grayish-blue);
+}
+
+.card:nth-child(3) .card-text h2 {
+	color: var(--very-dark-grayish-blue);
+}
+
+.card:nth-child(5) .card-text h2 {
+	color: var(--very-dark-grayish-blue);
+}
+
+@media (max-width: 768px) {
+    .card-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    .card {
+        grid-column: 1;
+        width: 100%;
+        margin: 0;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5 {
+        grid-column: 1;
+    }
+
+    .card-5 {
+        grid-row: auto;
+    }
+
+    .card-1 {
+        background-position: top right 20px;
+    }
+}
